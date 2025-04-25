@@ -91,9 +91,7 @@
         }
       </style>
 
-<!-- Leaflet CSS -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
   </head>
@@ -226,7 +224,6 @@
         attribution: '© OpenStreetMap contributors'
       }).addTo(map);
     
-      // Fungsi untuk menambahkan layer GeoJSON
       function addGeoJsonLayer(url, color) {
         fetch(url)
           .then(response => response.json())
@@ -250,12 +247,10 @@
           .catch(err => console.error(`Gagal memuat ${url}:`, err));
       }
     
-      // Pastikan file ini ada di folder /data/
       addGeoJsonLayer('bangunan.geojson', 'blue');
       addGeoJsonLayer('putra.geojson', 'red');
       addGeoJsonLayer('putri.geojson', 'green');
 
-// Tambahkan legenda
 var legend = L.control({ position: "bottomright" });
 
 legend.onAdd = function () {
